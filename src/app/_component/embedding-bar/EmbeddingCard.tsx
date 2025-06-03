@@ -26,13 +26,14 @@ function EmbeddingCard({ name, isLoading }: EmbeddingCardProps) {
           </div>
         ) : (
           <div className="w-full min-h-[6rem] flex flex-col items-center gap-y-2">
-            {/* <Image
+            <div className="w-full h-[5rem] bg-gray-200 items-center rounded-lg flex justify-center">
+              {/* <Image
               src="/embeddingIcon.svg"
               alt="Embedding Icon"
               width={48}
               height={48}
             /> */}
-            <div className="w-full h-[5rem] bg-gray-200 items-center rounded-lg flex justify-center"></div>
+            </div>
             <div className="w-full h-[1rem] flex gap-2 justify-between">
               <button className="basis-1/2 text-sm font-medium text-textTertiaryLight bg-iconPrimary rounded-lg flex items-center justify-center">
                 URL
