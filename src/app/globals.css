@@ -9,4 +9,8 @@
   --color-textSecondary: #475569;
   --color-textTertiaryLight: #ffffff;
   --color-baseLine: #1b202b;
+
+  --breakpoint-sm: 90.625rem;
+  --breakpoint-md: 73.75rem;
+  --breakpoint-lg: 107.5rem;
 }

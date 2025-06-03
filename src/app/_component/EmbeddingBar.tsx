@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import EmbeddingCard from "./embedding-bar/EmbeddingCard";
 
 const embedding = [
   { id: 1, title: "Docs 1" },
@@ -10,21 +11,13 @@ const embedding = [
 
 export default function EmbeddingBar() {
   return (
-    <aside className="w-full h-full flex max-w-xs bg-primary border-r flex-col items-center overflow-y-auto">
-      <div className="Embedding w-full flex justify-center">
-        <div className="EmbeddingBox flex h-[5rem] w-[15rem] justify-between items-center">
-          <button className="flex justify-center bg-buttonPrimary w-[16rem] hover:bg-gray-200 rounded-[2rem] p-2 border border-baseLine">
-            <Image src="/addIcon.svg" alt="Add Icon" width={16} height={16} />
-          </button>
-        </div>
-      </div>
-      <ul>
-        {embedding.map((embedding) => (
-          <li key={embedding.id}>
-            <h1>{embedding.title}</h1>
-          </li>
-        ))}
-      </ul>
-    </aside>
+    <section className="w-full min-w-[15rem] h-full flex bg-primary border-r flex-col items-center overflow-y-auto p-4 gap-y-[1.5rem]">
+      <button className="flex justify-center bg-buttonPrimary w-full h-[2.5rem] hover:bg-gray-200 rounded-[2rem] p-2 border border-baseLine">
+        <Image src="/addIcon.svg" alt="Add Icon" width={16} height={16} />
+      </button>
+      {embedding.map((embedding) => (
+        <EmbeddingCard key={embedding.id} name={embedding.title} />
+      ))}
+    </section>
   );
 }
