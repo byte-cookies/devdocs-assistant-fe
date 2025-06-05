@@ -5,11 +5,18 @@ import { useChatStore } from "../../store/chatStore";
 import { nanoid } from "nanoid";
 import Image from "next/image";
 
+//추가
+import { useRagStore } from "@/store/ragStore";
+
+
 function ChatInput() {
   const [input, setInput] = useState("");
   const addMessage = useChatStore((state) => state.addMessage);
   const inputRef = useRef<string>("");
   const isSendingRef = useRef(false);
+
+  //추가
+  const { setAnswer } = useRagStore();
 
   useEffect(() => {
     inputRef.current = input;
@@ -36,6 +43,10 @@ function ChatInput() {
 
     setInput("");
     inputRef.current = "";
+
+    //추가
+    setAnswer("Mock 응답입니다 : " + trimmed);
+    console.log("저장된 답변 : ", "Mock 응답입니다 : " + trimmed);
 
     setTimeout(() => {
       // Mock AI response

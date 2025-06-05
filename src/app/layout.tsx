@@ -1,3 +1,8 @@
+//수정----------------------------------------------------------------------
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import QueryProvider from "./_component/QueryProvider";
+//-------------------------------------------------------------------------
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -25,7 +30,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  //수정 -------------------------------------------------------------
+  const queryClient = new QueryClient();
+  // -----------------------------------------------------------------
   return (
+    /*
     <html lang="ko">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -36,6 +45,18 @@ export default function RootLayout({
           <EmbeddingBar />
         </div>
       </body>
+    </html>
+    */
+   <html lang="ko">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <QueryProvider>
+          <div className="flex h-screen">
+            <Sidebar />
+            <main className="w-full h-full">{children}</main>
+            <EmbeddingBar />
+          </div>
+        </QueryProvider>
+        </body>
     </html>
   );
 }
