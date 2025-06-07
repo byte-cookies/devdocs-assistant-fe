@@ -1,0 +1,143 @@
+import type { TailwindClassCategories } from "@/types/tailwind";
+import { combineDefaultStyles } from "@/utils/tailwindHelper";
+import { cva } from "class-variance-authority";
+
+export const buttonStyles = cva(
+  combineDefaultStyles({
+    default: {
+      responsive: "",
+      layout: "inline-flex items-center justify-center",
+      sizing: "",
+      spacing: "px-4 py-2",
+      visual: "border border-transparent rounded-md shadow-sm",
+      typography: "text-sm font-medium",
+      interactive:
+        "hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed",
+      behavior: "transition-colors duration-200",
+    } satisfies TailwindClassCategories,
+  }),
+  {
+    variants: {
+      variant: {
+        primary: {
+          responsive: "",
+          layout: "",
+          sizing: "",
+          spacing: "",
+          visual: "bg-blue-600 border-blue-600 text-white",
+          typography: "",
+          interactive: "hover:bg-blue-700 focus:ring-blue-500",
+          behavior: "",
+        } satisfies TailwindClassCategories,
+        secondary: {
+          responsive: "",
+          layout: "",
+          sizing: "",
+          spacing: "",
+          visual: "bg-white border-gray-300 text-gray-700",
+          typography: "",
+          interactive: "hover:bg-gray-50 focus:ring-blue-500",
+          behavior: "",
+        } satisfies TailwindClassCategories,
+        outline: {
+          responsive: "",
+          layout: "",
+          sizing: "",
+          spacing: "",
+          visual: "bg-transparent border-blue-600 text-blue-600",
+          typography: "",
+          interactive: "hover:bg-blue-50 focus:ring-blue-500",
+          behavior: "",
+        } satisfies TailwindClassCategories,
+        ghost: {
+          responsive: "",
+          layout: "",
+          sizing: "",
+          spacing: "",
+          visual: "bg-transparent border-transparent text-gray-700",
+          typography: "",
+          interactive: "hover:bg-gray-100 focus:ring-blue-500",
+          behavior: "",
+        } satisfies TailwindClassCategories,
+        destructive: {
+          responsive: "",
+          layout: "",
+          sizing: "",
+          spacing: "",
+          visual: "bg-red-600 border-red-600 text-white",
+          typography: "",
+          interactive: "hover:bg-red-700 focus:ring-red-500",
+          behavior: "",
+        } satisfies TailwindClassCategories,
+      },
+      size: {
+        xs: {
+          responsive: "",
+          layout: "",
+          sizing: "",
+          spacing: "px-2 py-1",
+          visual: "",
+          typography: "text-xs",
+          interactive: "",
+          behavior: "",
+        } satisfies TailwindClassCategories,
+        sm: {
+          responsive: "",
+          layout: "",
+          sizing: "",
+          spacing: "px-3 py-1.5",
+          visual: "",
+          typography: "text-sm",
+          interactive: "",
+          behavior: "",
+        } satisfies TailwindClassCategories,
+        md: {
+          responsive: "",
+          layout: "",
+          sizing: "",
+          spacing: "px-4 py-2",
+          visual: "",
+          typography: "text-sm",
+          interactive: "",
+          behavior: "",
+        } satisfies TailwindClassCategories,
+        lg: {
+          responsive: "",
+          layout: "",
+          sizing: "",
+          spacing: "px-6 py-3",
+          visual: "",
+          typography: "text-base",
+          interactive: "",
+          behavior: "",
+        } satisfies TailwindClassCategories,
+        xl: {
+          responsive: "",
+          layout: "",
+          sizing: "",
+          spacing: "px-8 py-4",
+          visual: "",
+          typography: "text-lg",
+          interactive: "",
+          behavior: "",
+        } satisfies TailwindClassCategories,
+      },
+      fullWidth: {
+        true: {
+          responsive: "",
+          layout: "w-full",
+          sizing: "",
+          spacing: "",
+          visual: "",
+          typography: "",
+          interactive: "",
+          behavior: "",
+        } satisfies TailwindClassCategories,
+      },
+    },
+    defaultVariants: {
+      variant: "primary",
+      size: "md",
+    },
+  }
+);

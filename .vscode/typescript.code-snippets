@@ -1,0 +1,86 @@
+{
+  "CVA Auto Structure": {
+    "prefix": "cvaAuto",
+    "body": [
+      "export const ${1:styleName}Styles = cva(",
+      "  combineDefaultStyles({",
+      "    default: {",
+      "      responsive: \"${2}\",",
+      "      layout: \"${3}\",",
+      "      sizing: \"${4}\",",
+      "      spacing: \"${5}\",",
+      "      visual: \"${6}\",",
+      "      typography: \"${7}\",",
+      "      interactive: \"${8}\",",
+      "      behavior: \"${9}\",",
+      "    } satisfies TailwindClassCategories,",
+      "  })",
+      ");"
+    ],
+    "description": "CVA structure with TailwindClassCategories"
+  },
+  "CVA Auto Structure with Variants": {
+    "prefix": "cvaAutoVariants",
+    "body": [
+      "export const ${1:styleName}Styles = cva(",
+      "  combineDefaultStyles({",
+      "    default: {",
+      "      responsive: \"${2}\",",
+      "      layout: \"${3}\",",
+      "      sizing: \"${4}\",",
+      "      spacing: \"${5}\",",
+      "      visual: \"${6}\",",
+      "      typography: \"${7}\",",
+      "      interactive: \"${8}\",",
+      "      behavior: \"${9}\",",
+      "    } satisfies TailwindClassCategories,",
+      "  }),",
+      "  {",
+      "    variants: {",
+      "      ${10:variant}: {",
+      "        ${11:value}: {",
+      "          responsive: \"${12}\",",
+      "          layout: \"${13}\",",
+      "          sizing: \"${14}\",",
+      "          spacing: \"${15}\",",
+      "          visual: \"${16}\",",
+      "          typography: \"${17}\",",
+      "          interactive: \"${18}\",",
+      "          behavior: \"${19}\",",
+      "        } satisfies TailwindClassCategories,",
+      "      },",
+      "    },",
+      "    defaultVariants: {",
+      "      ${10:variant}: \"${11:value}\",",
+      "    },",
+      "  }",
+      ");"
+    ],
+    "description": "CVA structure with variants and TailwindClassCategories"
+  },
+  "Tailwind Categories Object": {
+    "prefix": "twCategories",
+    "body": [
+      "{",
+      "  responsive: \"${1}\",",
+      "  layout: \"${2}\",",
+      "  sizing: \"${3}\",",
+      "  spacing: \"${4}\",",
+      "  visual: \"${5}\",",
+      "  typography: \"${6}\",",
+      "  interactive: \"${7}\",",
+      "  behavior: \"${8}\",",
+      "} satisfies TailwindClassCategories"
+    ],
+    "description": "Tailwind CSS categories object structure"
+  },
+  "Import CVA Dependencies": {
+    "prefix": "importCva",
+    "body": [
+      "import type { TailwindClassCategories } from \"@/types/tailwind\";",
+      "import { combineDefaultStyles } from \"@/utils/tailwindHelper\";",
+      "import { cva } from \"class-variance-authority\";"
+    ],
+    "description": "Import statements for CVA with Tailwind categories"
+  }
+}

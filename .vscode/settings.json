@@ -1,0 +1,41 @@
+// TailwindCSS : Cva 함수 안 에서 클래스 이름을 인식하도록 설정
+{
+  "tailwindCSS.includeLanguages": {
+    "typescript": "typescript",
+    "typescriptreact": "typescriptreact"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cva\\(.*?variants:\\s*\\{([\\s\\S]*?)\\}", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["variants:\\s*\\{([\\s\\S]*?)\\}", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    ["combineDefaultStyles\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    "responsive:\\s*[\"'`]([^\"'`]*)[\"'`]",
+    "layout:\\s*[\"'`]([^\"'`]*)[\"'`]",
+    "sizing:\\s*[\"'`]([^\"'`]*)[\"'`]",
+    "spacing:\\s*[\"'`]([^\"'`]*)[\"'`]",
+    "visual:\\s*[\"'`]([^\"'`]*)[\"'`]",
+    "typography:\\s*[\"'`]([^\"'`]*)[\"'`]",
+    "interactive:\\s*[\"'`]([^\"'`]*)[\"'`]",
+    "behavior:\\s*[\"'`]([^\"'`]*)[\"'`]"
+  ],
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "ngClass",
+    "responsive",
+    "layout",
+    "sizing",
+    "spacing",
+    "visual",
+    "typography",
+    "interactive",
+    "behavior"
+  ],
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  // 워크스페이스별 설정: .vscode/settings.json
+  "explorer.compactFolders": false
+}
