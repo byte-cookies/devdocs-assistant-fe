@@ -4,21 +4,21 @@ import React from "react";
 import { spinnerStyles } from "./Spinner.styles";
 
 export interface SpinnerProps
-  extends React.HTMLAttributes<HTMLDivElement>,
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, "color">,
     VariantProps<typeof spinnerStyles> {
   label?: string;
 }
 
 export default function Spinner({
-  size,
-  color,
+  spinnerSizing = "md",
+  spinnerVisual = "primary",
   className,
   label = "Loading...",
   ...props
 }: SpinnerProps) {
   return (
     <div
-      className={cn(spinnerStyles({ size, color }), className)}
+      className={cn(spinnerStyles({ spinnerSizing, spinnerVisual }), className)}
       role="status"
       aria-label={label}
       {...props}

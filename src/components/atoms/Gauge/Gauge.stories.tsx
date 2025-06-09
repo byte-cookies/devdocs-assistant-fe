@@ -34,15 +34,22 @@ const meta: Meta<typeof Gauge> = {
       },
       description: "Maximum gauge value",
     },
-    visual: {
-      control: "color",
+    gaugeSizing: {
+      control: { type: "select" },
+      options: ["md"],
+      description: "Size of the gauge",
+    },
+    gaugeVisual: {
+      control: { type: "select" },
+      options: ["blue", "green", "yellow", "red", "purple", "gradient"],
       description: "Color of the gauge fill",
     },
   },
   args: {
     value: 65,
     max: 100,
-    visual: "blue",
+    gaugeSizing: "md",
+    gaugeVisual: "blue",
   },
 };
 
@@ -50,19 +57,4 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // 기본 스토리
-export const Default: Story = {
-  args: {
-    value: 60,
-    max: 100,
-    visual: "blue",
-  },
-};
-
-// 애니메이션 활성화
-export const WithAnimation: Story = {
-  args: {
-    value: 75,
-    max: 100,
-    visual: "green",
-  },
-};
+export const Default: Story = {};
