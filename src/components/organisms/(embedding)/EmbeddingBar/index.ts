@@ -1,2 +1,1 @@
-export { default } from "./EmbeddingBar";
-export type { EmbeddingBarProps } from "./EmbeddingBar";
+export { default } from "./variants/EmbeddingBar";

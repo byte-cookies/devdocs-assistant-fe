@@ -7,6 +7,7 @@ export interface InputProps
     VariantProps<typeof inputStyles> {
   className?: string;
   value?: string;
+  placeholder?: string;
   onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 

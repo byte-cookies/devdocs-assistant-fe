@@ -1,2 +1,2 @@
-export * from "../(layouts)/MainLayout";
-export { default } from "../(layouts)/MainLayout";
+export { default } from "./MainLayout";
+export type { MainLayoutProps } from "./MainLayout";

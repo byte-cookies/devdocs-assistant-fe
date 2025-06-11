@@ -51,10 +51,10 @@ export const mainContentStyles = cva(
   combineDefaultStyles({
     default: {
       responsive: "",
-      layout: "flex-1",
+      layout: "flex-1 flex justify-center items-center",
       sizing: "h-full",
       spacing: "",
-      visual: "",
+      visual: "bg-background",
       typography: "",
       interactive: "",
       behavior: "overflow-auto",

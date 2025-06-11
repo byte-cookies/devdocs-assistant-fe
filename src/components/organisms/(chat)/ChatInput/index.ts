@@ -1,2 +1,1 @@
-export { default } from "./ChatInput";
-export { ChatInputProvider, useChatInputContext } from "./ChatInput.context";
+export { default } from "./variants/ChatInput";

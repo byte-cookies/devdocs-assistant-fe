@@ -19,15 +19,15 @@ export const buttonStyles = cva(
     variants: {
       buttonVisual: {
         primary:
-          "bg-blue-600 border-blue-600 text-whitehover:bg-blue-700 focus:ring-blue-500",
+          "bg-buttonPrimary border-buttonPrimary text-white hover:bg-buttonPrimaryHover focus:ring-blue-500",
         secondary:
-          "bg-white border-gray-300 text-gray-700hover:bg-gray-50 focus:ring-blue-500",
+          "bg-white border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-blue-500",
         outline:
-          "bg-transparent border-blue-600 text-blue-600hover:bg-blue-50 focus:ring-blue-500",
+          "bg-transparent border-blue-600 text-blue-600 hover:bg-blue-50 focus:ring-blue-500",
         ghost:
-          "bg-transparent border-transparent text-gray-700hover:bg-gray-100 focus:ring-blue-500",
+          "bg-transparent border-transparent text-gray-700 hover:bg-gray-100 focus:ring-blue-500",
         destructive:
-          "bg-red-600 border-red-600 text-whitehover:bg-red-700 focus:ring-red-500",
+          "bg-red-600 border-red-600 text-white hover:bg-red-700 focus:ring-red-500",
       },
       buttonSizing: {
         full: "w-full h-full text-md",

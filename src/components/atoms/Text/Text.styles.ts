@@ -10,7 +10,7 @@ export const textStyles = cva(
       sizing: "w-full h-full",
       spacing: "",
       visual: "",
-      typography: "",
+      typography: "whitespace-normal break-normal",
       interactive: "",
       behavior: "",
     } satisfies TailwindClassCategories,
@@ -27,6 +27,9 @@ export const textStyles = cva(
         sm: "text-sm font-normal",
         md: "text-md font-normal",
         lg: "text-lg font-normal",
+        xl: "text-xl font-normal",
+        "2xl": "text-2xl font-normal",
+        "3xl": "text-3xl font-extrabold",
       },
       textVisual: {
         primary: "text-textPrimary",

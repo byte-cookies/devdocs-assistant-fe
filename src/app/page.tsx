@@ -1,9 +1,14 @@
-import Gauge from "@/components/atoms/Gauge";
+import EmbeddingBar from "@/components/organisms/(embedding)/EmbeddingBar";
+import UserInfoBar from "@/components/organisms/(user)/UserInfoBar";
+import { ChatLayout } from "@/components/templates/ChatLayout";
+import MainLayout from "@/components/templates/MainLayout";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col items-center justify-center w-screen h-screen gap-4">
-      <Gauge value={50} max={100} visual="blue" />
-    </div>
+    <MainLayout
+      leftSidebar={<UserInfoBar />}
+      rightSidebar={<EmbeddingBar />}
+      mainContent={<ChatLayout />}
+    />
   );
 }

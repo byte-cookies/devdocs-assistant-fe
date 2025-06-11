@@ -11,8 +11,16 @@ export interface ButtonProps
     VariantProps<typeof textStyles>,
     VariantProps<typeof iconStyles> {
   text?: string;
-  leftIcon?: string;
-  rightIcon?: string;
+  leftIcon?: {
+    src: string;
+    alt?: string; // 추가: 아이콘에 대한 대체 텍스트
+    iconSizing?: VariantProps<typeof iconStyles>["iconSizing"];
+  };
+  rightIcon?: {
+    src: string;
+    alt?: string; // 추가: 아이콘에 대한 대체 텍스트
+    iconSizing?: VariantProps<typeof iconStyles>["iconSizing"];
+  };
   className?: string;
   onClick?: () => void; // 추가: 클릭 이벤트 핸들러
 }
@@ -36,7 +44,11 @@ export default function Button({
       onClick={onClick}
     >
       {leftIcon && (
-        <Icon src={leftIcon} alt="left icon" iconSizing={iconSizing} />
+        <Icon
+          src={leftIcon.src}
+          alt={leftIcon.alt || "left icon"}
+          iconSizing={leftIcon.iconSizing}
+        />
       )}
       {text && (
         <Text
@@ -47,7 +59,11 @@ export default function Button({
         />
       )}
       {rightIcon && (
-        <Icon src={rightIcon} alt="right icon" iconSizing={iconSizing} />
+        <Icon
+          src={rightIcon.src}
+          alt={rightIcon.alt || "right icon"}
+          iconSizing={rightIcon.iconSizing}
+        />
       )}
     </button>
   );

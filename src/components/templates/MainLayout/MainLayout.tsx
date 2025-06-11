@@ -7,7 +7,7 @@ import {
   rightSidebarStyles,
 } from "./MainLayout.styles";
 
-interface MainLayoutProps {
+export interface MainLayoutProps {
   leftSidebar?: ReactNode;
   rightSidebar?: ReactNode;
   mainContent?: ReactNode;

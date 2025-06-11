@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Button from "./Button";
 
 const meta: Meta<typeof Button> = {
-  title: "Molecules/Button",
+  title: "Components/Molecules/Button",
   component: Button,
   parameters: {
     layout: "centered",
@@ -38,7 +38,11 @@ export const WithLeftIcon: Story = {
     buttonVisual: "primary",
     buttonSizing: "full",
     buttonInteractive: true,
-    leftIcon: "/down.svg",
+    leftIcon: {
+      src: "/down.svg",
+      alt: "Down Icon",
+      iconSizing: "md",
+    },
   },
 };
 
@@ -48,7 +52,11 @@ export const WithRightIcon: Story = {
     buttonVisual: "primary",
     buttonSizing: "full",
     buttonInteractive: true,
-    rightIcon: "/down.svg",
+    rightIcon: {
+      src: "/down.svg",
+      alt: "Down Icon",
+      iconSizing: "md",
+    },
   },
 };
 
@@ -58,8 +66,16 @@ export const WithLeftAndRightIcons: Story = {
     buttonVisual: "primary",
     buttonSizing: "full",
     buttonInteractive: true,
-    leftIcon: "/down.svg",
-    rightIcon: "/down.svg",
+    leftIcon: {
+      src: "/down.svg",
+      alt: "Down Icon",
+      iconSizing: "md",
+    },
+    rightIcon: {
+      src: "/down.svg",
+      alt: "Down Icon",
+      iconSizing: "md",
+    },
   },
 };
 
