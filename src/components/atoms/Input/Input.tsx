@@ -7,6 +7,7 @@ export interface InputProps
     VariantProps<typeof inputStyles> {
   className?: string;
   value?: string;
+  disabled?: boolean;
   placeholder?: string;
   onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
@@ -14,7 +15,11 @@ export interface InputProps
 export default function Input({
   inputVisual,
   inputSizing,
+  disabled,
   className,
+  value,
+  onChange,
+  placeholder,
 }: InputProps) {
   return (
     <div
@@ -23,7 +28,13 @@ export default function Input({
         className
       )}
     >
-      <textarea className={cn(inputStyles({ inputSizing }))} />
+      <textarea
+        className={cn(inputStyles({ inputSizing }))}
+        disabled={disabled}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+      />
     </div>
   );
 }

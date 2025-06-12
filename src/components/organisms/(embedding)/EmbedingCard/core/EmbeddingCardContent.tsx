@@ -1,19 +1,16 @@
 import { cn } from "@/utils/tailwindHelper";
 import Image from "next/image";
 import { EmbeddingCardContentStyles } from "./EmbeddingCardComponents.styles";
-import { useEmbeddingCardContext } from "./EmbeddingCardCore";
 
 // Content Component (Icon Area)
 const EmbeddingCardContent = () => {
-  const { docsImageSrc, docsImageAlt } = useEmbeddingCardContext();
-
   return (
-    <div className={cn(EmbeddingCardContentStyles())}>
+    <div className={cn(EmbeddingCardContentStyles(), "p-2")}>
       <Image
-        src={docsImageSrc || "/embedding.png"}
-        alt={docsImageAlt || "Document Image"}
+        src="/embedding.png"
+        alt="Embedding Icon"
         fill
-        className="object-cover rounded-md"
+        className="object-cover"
       />
     </div>
   );

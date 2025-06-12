@@ -6,7 +6,7 @@ export const ChatAIOutputContentStyles = cva(
   combineDefaultStyles({
     default: {
       responsive: "",
-      layout: "flex justify-center items-center",
+      layout: "flex flex-col justify-center items-start",
       sizing: "w-full h-auto",
       spacing: "p-4",
       visual: "bg-background rounded-md border-b-2 border-gray-300",

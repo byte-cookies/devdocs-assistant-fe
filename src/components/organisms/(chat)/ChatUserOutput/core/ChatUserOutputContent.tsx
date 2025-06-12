@@ -7,7 +7,7 @@ const ChatUserOutputContent = () => {
   return (
     <Text
       content={content}
-      textLayout="justify-center"
+      textLayout="justify-start"
       textSizing="lg"
       textVisual="secondary"
     />

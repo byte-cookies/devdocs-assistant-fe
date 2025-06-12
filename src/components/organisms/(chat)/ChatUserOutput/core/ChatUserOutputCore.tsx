@@ -22,16 +22,14 @@ export const useChatUserOutputContext = () => {
 // Provider (Core)
 export type ChatUserOutputCoreProps = {
   children: React.ReactNode;
-  contentTest?: string; // Optional prop for testing purposes
+  content: string;
 };
 export default function ChatUserOutputCore({
   children,
-  contentTest,
+  content,
 }: ChatUserOutputCoreProps) {
   return (
-    <ChatUserOutputContext.Provider
-      value={{ content: contentTest || "Default content" }}
-    >
+    <ChatUserOutputContext.Provider value={{ content }}>
       {children}
     </ChatUserOutputContext.Provider>
   );

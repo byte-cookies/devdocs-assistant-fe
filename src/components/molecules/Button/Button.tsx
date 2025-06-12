@@ -22,6 +22,7 @@ export interface ButtonProps
     iconSizing?: VariantProps<typeof iconStyles>["iconSizing"];
   };
   className?: string;
+  disabled?: boolean;
   onClick?: () => void; // 추가: 클릭 이벤트 핸들러
 }
 
@@ -35,6 +36,7 @@ export default function Button({
   textLayout,
   textSizing,
   textVisual,
+  disabled,
   className,
   onClick,
 }: ButtonProps) {
@@ -42,6 +44,7 @@ export default function Button({
     <button
       className={cn(buttonStyles({ buttonSizing, buttonVisual }), className)}
       onClick={onClick}
+      disabled={disabled}
     >
       {leftIcon && (
         <Icon

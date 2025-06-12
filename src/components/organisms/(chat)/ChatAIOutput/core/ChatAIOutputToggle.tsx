@@ -4,6 +4,7 @@ import Text from "@/components/atoms/Text";
 import Button from "@/components/molecules/Button";
 import { cn } from "@/utils/tailwindHelper";
 import { useEffect, useRef, useState } from "react";
+import { useChatAIOutputContext } from "./ChatAIOutputCore";
 import {
   ChatAIOutputButtonAreaStyles,
   ChatAIOutputIconAreaStyles,
@@ -14,6 +15,7 @@ export default function ChatAIOutputToggle() {
   const [open, setOpen] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const [maxHeight, setMaxHeight] = useState("0px");
+  const { sources } = useChatAIOutputContext();
 
   const Authority = 75; // 예시 값
   const Recency = 85; // 예시 값
@@ -27,28 +29,6 @@ export default function ChatAIOutputToggle() {
   }, [open]);
 
   const verified = true;
-  const sources = [
-    {
-      name: "Source 1",
-      icon: "/source1.svg",
-      url: "https://example.com/source1",
-    },
-    {
-      name: "Source 2",
-      icon: "/source2.svg",
-      url: "https://https://nextjs.org/docs/app/building-your-application/data-fetching/incremental-static-regeneration.com/source2",
-    },
-    {
-      name: "Source 3",
-      icon: "/source3.svg",
-      url: "https://nextjs.org/docs/app/building-your-application/data-fetching/fetching://example.com/source3",
-    },
-    {
-      name: "Source 4",
-      icon: "/source4.svg",
-      url: "https://example.com/source4",
-    },
-  ];
 
   const handleCopy = () => {};
   const handleRegenerate = () => {};
@@ -106,22 +86,22 @@ export default function ChatAIOutputToggle() {
         }}
       >
         <div className="flex flex-col gap-4 p-4 w-full h-full">
-          {sources.map((source) => (
+          {sources?.map((source, index) => (
             /* 소스 컴포넌트 */
             <div
-              key={source.name}
+              key={`${source.source}-${index}`} // source.source와 index를 조합하여 고유 key 생성
               className="w-fit flex items-center justify-start gap-2 bg-iconPrimary rounded-full h-auto py-[0.2rem] px-3"
             >
               <Icon src="/source.svg" alt="source" iconSizing="lg" />
               <a
-                href={source.url}
+                href={source.source}
                 className="text-white hover:underline text-[0.5rem] w-auto whitespace-normal break-all"
               >
-                {source.url}
+                {source.source}
               </a>
             </div>
           ))}
-          <div className="mt-4 w-full h-auto flex flex-col gap-2 items-start justify-start bg-background rounded-md border-b-2 border-gray-300">
+          <div className="mt-4 w-full h-auto flex flex-col gap-2 items-start justify-start bg-background rounded-md border-gray-300">
             {/* 유효성 검증 */}
             <div className="flex items-center gap-2 w-full h-auto">
               <Text

@@ -7,9 +7,9 @@ export const ChatUserOutputContentStyles = cva(
     default: {
       responsive: "",
       layout: "flex justify-center items-center",
-      sizing: "w-full h-auto",
+      sizing: "w-[70%] h-auto",
       spacing: "p-8",
-      visual: "bg-background rounded-md shadow-md",
+      visual: "bg-background rounded-md border-2 border-gray-300 shadow-md",
       typography: "",
       interactive: "",
       behavior: "",

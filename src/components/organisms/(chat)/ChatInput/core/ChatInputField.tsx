@@ -1,15 +1,28 @@
 import Input from "@/components/atoms/Input";
-import { useChatInputContext } from "./ChatInputCore";
 
-const ChatInputField = () => {
-  const { value, setValue } = useChatInputContext();
+interface ChatInputFieldProps {
+  value: string;
+  onValueChange: (value: string) => void;
+  disabled: boolean;
+}
+
+const ChatInputField = ({
+  value,
+  onValueChange,
+  disabled,
+}: ChatInputFieldProps) => {
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    onValueChange(e.target.value);
+  };
 
   return (
     <Input
       inputVisual={"chatInput"}
       inputSizing={"chatInput"}
       value={value}
-      onChange={(e) => setValue(e.target.value)}
+      onChange={handleChange}
+      disabled={disabled}
+      placeholder="메세지를 입력해주세요..."
     />
   );
 };

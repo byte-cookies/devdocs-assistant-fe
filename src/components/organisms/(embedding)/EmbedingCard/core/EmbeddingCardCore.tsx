@@ -7,6 +7,7 @@ import EmbeddingCardLoading from "./EmbeddingCardLoading";
 
 // Context
 interface EmbeddingCardContextProps {
+  id?: string;
   name: string;
   isLoading: boolean;
   url?: string;
@@ -15,6 +16,8 @@ interface EmbeddingCardContextProps {
   docsImageAlt?: string;
   onUrlClick?: () => void;
   onCrawledAtClick?: () => void;
+  preview?: string;
+  status?: string;
 }
 
 export const EmbeddingCardContext = createContext<
@@ -34,6 +37,7 @@ export const useEmbeddingCardContext = () => {
 // Provider (Core)
 export type EmbeddingCardCoreProps = {
   children: React.ReactNode;
+  id?: string;
   name?: string;
   isLoading?: boolean;
   url?: string;
@@ -42,11 +46,14 @@ export type EmbeddingCardCoreProps = {
   docsImageAlt?: string;
   onUrlClick?: () => void;
   onCrawledAtClick?: () => void;
+  preview?: string;
+  status?: string;
 };
 
 export default function EmbeddingCardCore({
   children,
-  name = "Embedding Name",
+  id,
+  name = "Document", // Changed default
   isLoading = false,
   url = "",
   crawledAt = "",
@@ -54,10 +61,13 @@ export default function EmbeddingCardCore({
   docsImageAlt,
   onUrlClick,
   onCrawledAtClick,
+  preview,
+  status,
 }: EmbeddingCardCoreProps) {
   return (
     <EmbeddingCardContext.Provider
       value={{
+        id,
         name,
         isLoading,
         url,
@@ -66,6 +76,8 @@ export default function EmbeddingCardCore({
         docsImageAlt,
         onUrlClick,
         onCrawledAtClick,
+        preview,
+        status,
       }}
     >
       {children}

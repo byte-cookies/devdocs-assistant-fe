@@ -1,9 +1,14 @@
 import Button from "@/components/molecules/Button";
-import { useChatInputContext } from "./ChatInputCore";
 
-function ChatInputSendButton() {
-  const { handleSend } = useChatInputContext();
+interface ChatInputSendButtonProps {
+  onSendMessage: () => void;
+  disabled?: boolean;
+}
 
+function ChatInputSendButton({
+  onSendMessage,
+  disabled,
+}: ChatInputSendButtonProps) {
   return (
     <Button
       text="Send"
@@ -14,8 +19,9 @@ function ChatInputSendButton() {
       textLayout="justify-start"
       textSizing="md"
       textVisual="white"
-      onClick={handleSend}
+      onClick={onSendMessage}
       className="rounded-full shadow-none"
+      disabled={disabled}
     />
   );
 }

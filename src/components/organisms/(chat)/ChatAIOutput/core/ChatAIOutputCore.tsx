@@ -1,3 +1,4 @@
+import { MessageSource } from "@/store/chatStore";
 import { createContext, useContext } from "react";
 import ChatAIOutputLayout from "../layout";
 import ChatAIOutputContent from "./ChatAIOutputContent";
@@ -6,13 +7,8 @@ import ChatAIOutputToggle from "./ChatAIOutputToggle";
 // Context
 interface ChatAIOutputContextProps {
   content: string;
-  aiName?: string;
-  avatarSrc?: string;
-  showActions?: boolean;
-  onCopy?: () => void;
-  onRegenerate?: () => void;
-  onLike?: () => void;
-  onDislike?: () => void;
+  sources?: MessageSource[];
+  isError?: boolean;
 }
 
 export const ChatAIOutputContext = createContext<
@@ -32,17 +28,23 @@ export const useChatAIOutputContext = () => {
 // Provider (Core)
 export type ChatAIOutputCoreProps = {
   children: React.ReactNode;
-  content?: string;
+  content: string;
+  sources?: MessageSource[];
+  isError?: boolean;
 };
 
 export default function ChatAIOutputCore({
   children,
-  content = "AI 응답입니다.",
+  content,
+  sources,
+  isError,
 }: ChatAIOutputCoreProps) {
   return (
     <ChatAIOutputContext.Provider
       value={{
         content,
+        sources,
+        isError,
       }}
     >
       {children}

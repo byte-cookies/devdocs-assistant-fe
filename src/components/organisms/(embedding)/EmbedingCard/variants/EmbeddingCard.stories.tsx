@@ -59,7 +59,7 @@ export const Default: Story = {
     crawledAt: "2024-01-15",
     docsImageAlt: "Embedding Icon",
     docsImageSrc: "/embedding.png",
-    onUrlClick: () => console.log("URL clicked"),
-    onCrawledAtClick: () => console.log("Crawled at clicked"),
+    onUrlClick: () => {},
+    onCrawledAtClick: () => {},
   },
 };

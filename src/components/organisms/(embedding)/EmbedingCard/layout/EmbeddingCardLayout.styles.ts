@@ -7,7 +7,7 @@ export const EmbeddingCardLayoutStyles = cva(
     default: {
       responsive: "",
       layout: "flex flex-col items-center",
-      sizing: "w-full min-h-[8rem]",
+      sizing: "w-full h-auto",
       spacing: "p-4 gap-2",
       visual: "bg-background rounded-xl shadow-md",
       typography: "",

@@ -1,16 +1,11 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import { createContext, ReactNode, useContext } from "react";
 
 import ChatInputLayout from "../layout/ChatInputLayout";
 import ChatInputAttachButton from "./ChatInputAttachButton";
 import ChatInputField from "./ChatInputField";
 import ChatInputSendButton from "./ChatInputSendButton";
 
-type ChatInputContextType = {
-  value: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
-  handleSend: () => void;
-  handleAttach: () => void;
-};
+type ChatInputContextType = {};
 
 export const ChatInputContext = createContext<ChatInputContextType | undefined>(
   undefined
@@ -31,21 +26,8 @@ export type ChatInputCoreProps = {
 };
 
 export default function ChatInputCore({ children }: ChatInputCoreProps) {
-  const [value, setValue] = useState("");
-  const handleSend = () => {};
-  const handleAttach = () => {};
-
   return (
-    <ChatInputContext.Provider
-      value={{
-        value,
-        setValue,
-        handleSend,
-        handleAttach,
-      }}
-    >
-      {children}
-    </ChatInputContext.Provider>
+    <ChatInputContext.Provider value={{}}>{children}</ChatInputContext.Provider>
   );
 }
 

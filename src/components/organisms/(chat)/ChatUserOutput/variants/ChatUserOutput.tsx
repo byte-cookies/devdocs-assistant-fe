@@ -1,8 +1,8 @@
 import ChatUserOutputCore from "../core/ChatUserOutputCore";
 
-function ChatUserOutput({ contentTest }: { contentTest?: string }) {
+function ChatUserOutput({ content }: { content: string }) {
   return (
-    <ChatUserOutputCore contentTest={contentTest}>
+    <ChatUserOutputCore content={content}>
       <ChatUserOutputCore.Layout>
         <ChatUserOutputCore.Content />
       </ChatUserOutputCore.Layout>

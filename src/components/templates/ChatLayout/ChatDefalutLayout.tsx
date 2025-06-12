@@ -3,20 +3,20 @@
 import ChatAIOutput from "@/components/organisms/(chat)/ChatAIOutput";
 import ChatInput from "@/components/organisms/(chat)/ChatInput";
 import ChatUserOutput from "@/components/organisms/(chat)/ChatUserOutput";
-import { useEffect, useRef, useState } from "react";
-
-// 메시지 타입 정의
-interface Message {
-  id: string;
-  text: string;
-  timestamp: Date;
-  sender: "user" | "ai";
-}
+import { useChat } from "@/hooks/services/useChat"; // useChat 임포트
+import { Message } from "@/store/chatStore"; // Message 타입 임포트
+import { useEffect, useRef } from "react";
 
 export default function ChatDefalutLayout() {
-  // 상태 관리
-  const [messages, setMessages] = useState<Message[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  // useChat 훅 사용
+  const {
+    chatMessages,
+    sendMessage,
+    isLoading,
+    currentInput,
+    setCurrentInput,
+  } = useChat();
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // 스크롤을 최하단으로 이동
@@ -26,56 +26,31 @@ export default function ChatDefalutLayout() {
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages]);
-
-  // 메시지 전송 처리
-  const handleMessageSubmit = async (messageText: string) => {
-    if (!messageText.trim()) return;
-
-    // 1. 사용자 메시지 추가
-    const userMessage: Message = {
-      id: Date.now().toString(),
-      text: messageText,
-      timestamp: new Date(),
-      sender: "user",
-    };
-
-    setMessages((prev) => [...prev, userMessage]);
-    setIsLoading(true);
-
-    try {
-      // 2. API 호출 (실제 구현에서는 실제 API 호출)
-      await new Promise((resolve) => setTimeout(resolve, 1000)); // 임시 지연
-
-      // 3. AI 응답 추가
-      const aiMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        text: "This is a sample AI response to your message.",
-        timestamp: new Date(),
-        sender: "ai",
-      };
-
-      setMessages((prev) => [...prev, aiMessage]);
-    } catch (error) {
-      console.error("Failed to send message:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  }, [chatMessages]); // chatMessages 변경 시 스크롤
 
   return (
     <div className="flex flex-col justify-center items-center w-[60rem] h-full p-8 gap-8">
       {/* 채팅 메시지 영역 */}
       <div className="flex-1 overflow-y-auto mb-4 space-y-4 bg-white p-4 rounded-lg shadow-md w-full">
-        {messages.map((message) => (
-          <div key={message.id}>
-            {message.sender === "ai" ? (
-              <ChatAIOutput content="example AI response" />
-            ) : (
-              <ChatUserOutput contentTest="example user message" />
-            )}
-          </div>
-        ))}
+        {chatMessages.map(
+          (
+            message: Message // chatMessages 사용 및 타입 명시
+          ) => (
+            <div key={message.id}>
+              {message.type === "ai" ? (
+                <ChatAIOutput
+                  content={message.text}
+                  sources={message.sources}
+                  isError={message.error}
+                />
+              ) : (
+                <div className="flex justify-end w-full h-auto">
+                  <ChatUserOutput content={message.text} />
+                </div>
+              )}
+            </div>
+          )
+        )}
 
         {/* 로딩 표시 */}
         {isLoading && (
@@ -92,7 +67,12 @@ export default function ChatDefalutLayout() {
 
       {/* 입력 영역 */}
       <div className="w-full h-[10rem] flex justify-center items-center">
-        <ChatInput disabled={isLoading} />
+        <ChatInput
+          value={currentInput}
+          onValueChange={setCurrentInput}
+          onSendMessage={sendMessage}
+          disabled={isLoading}
+        />
       </div>
     </div>
   );

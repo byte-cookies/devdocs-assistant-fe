@@ -9,9 +9,10 @@ import {
 
 type LayoutProps = {
   children: ReactNode;
+  className?: string; // Added
 };
 
-function EmbeddingCardLayout({ children }: LayoutProps) {
+function EmbeddingCardLayout({ children, className }: LayoutProps) {
   const { isLoading } = useEmbeddingCardContext();
 
   const items = React.Children.toArray(children) as React.ReactElement[];
@@ -33,7 +34,9 @@ function EmbeddingCardLayout({ children }: LayoutProps) {
   );
 
   return (
-    <section className={cn(EmbeddingCardLayoutStyles())}>
+    <section className={cn(EmbeddingCardLayoutStyles(), className)}>
+      {" "}
+      {/* Used className */}
       {header}
       <div className={cn(EmbeddingCardBodyStyles())}>
         {isLoading ? (

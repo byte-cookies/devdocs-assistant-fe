@@ -21,13 +21,17 @@ export const buttonStyles = cva(
         primary:
           "bg-buttonPrimary border-buttonPrimary text-white hover:bg-buttonPrimaryHover focus:ring-blue-500",
         secondary:
-          "bg-white border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-blue-500",
+          "bg-white border-gray-300 text-gray-700 hover:bg-gray-500 focus:ring-blue-500",
         outline:
           "bg-transparent border-blue-600 text-blue-600 hover:bg-blue-50 focus:ring-blue-500",
         ghost:
           "bg-transparent border-transparent text-gray-700 hover:bg-gray-100 focus:ring-blue-500",
         destructive:
           "bg-red-600 border-red-600 text-white hover:bg-red-700 focus:ring-red-500",
+        warning:
+          "bg-yellow-500 border-yellow-500 text-white hover:bg-yellow-600 focus:ring-yellow-400",
+        error:
+          "bg-red-700 border-red-700 text-white hover:bg-red-800 focus:ring-red-600",
       },
       buttonSizing: {
         full: "w-full h-full text-md",

@@ -1,12 +1,15 @@
+import { MessageSource } from "@/store/chatStore";
 import { ChatAIOutputCore } from "../core";
 
 interface ChatAIOutputProps {
-  content?: string;
+  content: string;
+  sources?: MessageSource[];
+  isError?: boolean;
 }
 
-function ChatAIOutput({ content }: ChatAIOutputProps) {
+function ChatAIOutput({ content, sources, isError }: ChatAIOutputProps) {
   return (
-    <ChatAIOutputCore content={content}>
+    <ChatAIOutputCore content={content} sources={sources} isError={isError}>
       <ChatAIOutputCore.Layout>
         <ChatAIOutputCore.Content />
         <ChatAIOutputCore.Toggle />

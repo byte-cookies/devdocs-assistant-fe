@@ -10,7 +10,7 @@ export const textStyles = cva(
       sizing: "w-full h-full",
       spacing: "",
       visual: "",
-      typography: "whitespace-normal break-normal",
+      typography: "whitespace-pre-line break-normal",
       interactive: "",
       behavior: "",
     } satisfies TailwindClassCategories,
@@ -36,6 +36,8 @@ export const textStyles = cva(
         secondary: "text-textSecondary",
         tertiary: "text-textTertiary",
         white: "text-white",
+        gray: "text-gray-500",
+        error: "text-red-500",
       },
     },
   }
