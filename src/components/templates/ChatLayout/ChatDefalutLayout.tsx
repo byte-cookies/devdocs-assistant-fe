@@ -3,11 +3,11 @@
 import ChatAIOutput from "@/components/organisms/(chat)/ChatAIOutput";
 import ChatInput from "@/components/organisms/(chat)/ChatInput";
 import ChatUserOutput from "@/components/organisms/(chat)/ChatUserOutput";
-import { useChat } from "@/hooks/services/useChat"; // useChat 임포트
+import useChat from "@/hooks/services/useChat"; // useChat 임포트
 import { Message } from "@/store/chatStore"; // Message 타입 임포트
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react"; // PropsWithChildren 임포트
 
-export default function ChatDefalutLayout() {
+const ChatDefalutLayout = () => {
   // useChat 훅 사용
   const {
     chatMessages,
@@ -76,4 +76,6 @@ export default function ChatDefalutLayout() {
       </div>
     </div>
   );
-}
+};
+
+export default ChatDefalutLayout;

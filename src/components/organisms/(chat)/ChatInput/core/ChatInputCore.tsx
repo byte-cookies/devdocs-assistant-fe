@@ -1,11 +1,13 @@
 import { createContext, ReactNode, useContext } from "react";
 
-import ChatInputLayout from "../layout/ChatInputLayout";
+import ChatInputLayout from "../layout";
 import ChatInputAttachButton from "./ChatInputAttachButton";
 import ChatInputField from "./ChatInputField";
 import ChatInputSendButton from "./ChatInputSendButton";
 
-type ChatInputContextType = {};
+type ChatInputContextType = {
+  handleAttach?: () => void; // handleAttach 속성 추가 (optional)
+};
 
 export const ChatInputContext = createContext<ChatInputContextType | undefined>(
   undefined
@@ -23,11 +25,17 @@ export function useChatInputContext() {
 
 export type ChatInputCoreProps = {
   children: ReactNode;
+  onAttach?: () => void; // onAttach prop 추가
 };
 
-export default function ChatInputCore({ children }: ChatInputCoreProps) {
+export default function ChatInputCore({
+  children,
+  onAttach,
+}: ChatInputCoreProps) {
   return (
-    <ChatInputContext.Provider value={{}}>{children}</ChatInputContext.Provider>
+    <ChatInputContext.Provider value={{ handleAttach: onAttach }}>
+      {children}
+    </ChatInputContext.Provider>
   );
 }
 

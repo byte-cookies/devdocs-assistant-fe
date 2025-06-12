@@ -31,11 +31,15 @@ const fetchCrawlerCheck = async (
 };
 
 // TanStack Query 훅
-export const useCrawlerCheck = (params?: any, options?: any) => {
+export const useCrawlerCheck = (
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  params?: any,
+  options?: Record<string, unknown>
+) => {
   return useQuery<CrawlerCheckResponse, Error>({
     queryKey: ["crawlerCheck", params],
     queryFn: () => fetchCrawlerCheck(params),
-    ...options,
+    ...(options || {}),
   });
 };
 

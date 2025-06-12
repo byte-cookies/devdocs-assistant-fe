@@ -1,4 +1,3 @@
-import Spinner from "@/components/atoms/Spinner";
 import Text from "@/components/atoms/Text";
 import Button from "@/components/molecules/Button";
 import { useState } from "react";
@@ -43,16 +42,6 @@ export default function EmbeddingBarInput() {
               disabled={isAddingDocs || !urlInput.trim()}
             />
           </div>
-          {isAddingDocs && (
-            <div className="flex items-center gap-2">
-              <Spinner spinnerSizing="sm" />
-              <Text
-                textSizing="sm"
-                textVisual="gray"
-                content="Adding document..."
-              />
-            </div>
-          )}
           {addError && (
             <Text
               textSizing="sm"

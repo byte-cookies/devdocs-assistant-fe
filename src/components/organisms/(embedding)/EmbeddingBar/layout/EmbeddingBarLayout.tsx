@@ -4,16 +4,18 @@ interface EmbeddingBarLayoutProps {
   children: React.ReactNode;
 }
 
-export default function EmbeddingBarLayout({
+const EmbeddingBarLayout: React.FC<EmbeddingBarLayoutProps> = ({
   children,
-}: EmbeddingBarLayoutProps) {
+}: EmbeddingBarLayoutProps) => {
   const items = React.Children.toArray(children) as React.ReactElement[];
 
   const cardList = items.find(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (c) => (c.type as any)?.name === "EmbeddingBarCardList"
   );
 
   const input = items.find(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (c) => (c.type as any)?.name === "EmbeddingBarInput"
   );
 
@@ -23,4 +25,6 @@ export default function EmbeddingBarLayout({
       {cardList}
     </section>
   );
-}
+};
+
+export default EmbeddingBarLayout;

@@ -15,26 +15,28 @@ interface SearchResult {
 // useCrawlerDocument가 반환할 것으로 기대되는 데이터 구조
 interface ExpectedLatestDocsData {
   count?: number;
-  documents: Array<{ source: string; preview: string; [key: string]: any }>; // 기존 유지 또는 더 구체화 가능
+  documents: Array<{ source: string; preview: string }>; // 기존 유지 또는 더 구체화 가능
   // API 응답에 따라 id, content 등이 있을 경우 추가
 }
 
 // ExpectedLatestDocsData.documents의 개별 아이템 타입
-type LatestDocumentItem = ExpectedLatestDocsData["documents"][number];
+type LatestDocumentItem = {
+  source: string;
+  preview: string;
+  [key: string]: unknown; // any 대신 unknown 사용
+};
 
 // useLangchainRagAsk의 sources 아이템 타입 (예시, 실제 API 응답에 맞게 조정 필요)
 interface LangchainRagSourceItem {
   source: string;
-  // content, title 등 추가 필드가 있다면 여기에 정의
-  [key: string]: any; // 일단 유연성을 위해 유지
 }
 
+// 검색 결과를 저장할 상태 (검색어, 결과, 로딩 상태, 오류 상태)
 export const useDocsSearch = () => {
   const [searchInput, setSearchInput] = useState<string>("");
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
 
-  const { documents: documentsInStore, setDocuments: setDocumentsInStore } =
-    useCrawlerStore();
+  const { setDocuments: setDocumentsInStore } = useCrawlerStore();
 
   const {
     mutate: searchDocsWithQuery,
@@ -155,3 +157,5 @@ export const useDocsSearch = () => {
     refetchLatestDocuments, // 최신 문서 수동 새로고침 함수
   };
 };
+
+export default useDocsSearch;

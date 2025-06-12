@@ -35,7 +35,7 @@ interface ChatState {
   // removeMessage: (id: string) => void;
 }
 
-export const useChatStore = create<ChatState>((set, get) => ({
+export const useChatStore = create<ChatState>((set) => ({
   messages: [],
   input: "",
   isLoading: false,

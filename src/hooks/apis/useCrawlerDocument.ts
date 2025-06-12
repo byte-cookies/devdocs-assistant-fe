@@ -23,11 +23,15 @@ const fetchCrawlerDocument = async (
 };
 
 // TanStack Query 훅
-export const useCrawlerDocument = (params?: any) => {
+export const useCrawlerDocument = (
+  limit?: number,
+  options?: Record<string, unknown>
+) => {
   return useQuery<CrawlerDocumentResponse, Error>({
-    queryKey: ["crawlerDocument", params],
-    queryFn: () => fetchCrawlerDocument(params),
-    enabled: !!params, // params가 있을 때만 쿼리 실행
+    queryKey: ["crawlerDocument", limit],
+    queryFn: () => fetchCrawlerDocument(limit || 0), // limit이 undefined이면 0으로 설정
+    enabled: !!limit, // params가 있을 때만 쿼리 실행
+    ...(options || {}), // options가 undefined일 경우 빈 객체 사용
   });
 };
 

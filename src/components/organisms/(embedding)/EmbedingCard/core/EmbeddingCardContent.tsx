@@ -10,7 +10,8 @@ const EmbeddingCardContent = () => {
         src="/embedding.png"
         alt="Embedding Icon"
         fill
-        className="object-cover"
+        className="object-cover w-full h-auto"
+        priority
       />
     </div>
   );

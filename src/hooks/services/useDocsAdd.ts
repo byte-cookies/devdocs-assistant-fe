@@ -33,7 +33,6 @@ export const useDocsAdd = () => {
     mutate: ingestUrl,
     isPending: isIngesting,
     error: ingestError,
-    data: ingestData,
   } = useCrawlerIngest();
 
   const {
@@ -68,7 +67,7 @@ export const useDocsAdd = () => {
               // 3. Ingest 성공 시 문서 목록 업데이트
               fetchNewDocuments();
             },
-            onError: (ingestErr: any) => {
+            onError: (ingestErr: Error) => {
               setError(
                 ingestErr.message || "문서 인덱싱 중 오류가 발생했습니다."
               );
@@ -89,8 +88,10 @@ export const useDocsAdd = () => {
         );
         setIsLoading(false);
       }
-    } catch (e: any) {
-      setError(e.message || "URL 검사 중 예상치 못한 오류가 발생했습니다.");
+    } catch (e: unknown) {
+      setError(
+        (e as Error).message || "URL 검사 중 예상치 못한 오류가 발생했습니다."
+      );
       setIsCrawlable(false);
       setIsLoading(false);
     }
@@ -100,11 +101,10 @@ export const useDocsAdd = () => {
     ingestUrl,
     fetchNewDocuments,
     setIsCrawlable,
-    setLastCrawledURL,
     setIngestResult,
-    setError,
-    setIsLoading,
-    checkError?.message,
+    setLastCrawledURL,
+    checkError, // checkError 추가
+    // ingestData, // 의존성 배열에서 제거
   ]);
 
   // 새 문서 데이터 로드 시 스토어 업데이트
@@ -120,7 +120,7 @@ export const useDocsAdd = () => {
       }));
       setDocuments(formattedDocs); // 전체 문서 목록을 새 목록으로 교체
     }
-  }, [newDocumentsData, setDocuments]);
+  }, [newDocumentsData, setDocuments]); // 의존성 배열에서 documents 제거
 
   // API 에러 처리 (check, ingest, document 로드)
   useEffect(() => {

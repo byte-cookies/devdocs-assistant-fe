@@ -32,7 +32,6 @@ export default function Button({
   rightIcon,
   buttonSizing,
   buttonVisual,
-  iconSizing,
   textLayout,
   textSizing,
   textVisual,

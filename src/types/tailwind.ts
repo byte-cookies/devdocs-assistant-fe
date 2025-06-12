@@ -13,14 +13,14 @@
  * | behavior | 동작과 효과 | overflow-*, transition-*, transform-*, animate-* |
  */
 export interface TailwindClassCategories {
-  responsive?: string | Object;
-  layout?: string | Object;
-  sizing?: string | Object;
-  spacing?: string | Object;
-  visual?: string | Object;
-  typography?: string | Object;
-  interactive?: string | Object;
-  behavior?: string | Object;
+  responsive?: string | object;
+  layout?: string | object;
+  sizing?: string | object;
+  spacing?: string | object;
+  visual?: string | object;
+  typography?: string | object;
+  interactive?: string | object;
+  behavior?: string | object;
 }
 
 /**

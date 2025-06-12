@@ -3,17 +3,18 @@ import ChatInputCore from "../core/ChatInputCore";
 interface ChatInputProps {
   value: string;
   onValueChange: (value: string) => void;
-  onSendMessage: (messageText: string) => Promise<void>; // 이 prop은 useChat의 sendMessage를 직접 받음
+  onSendMessage: (messageText: string) => Promise<void>;
   disabled: boolean;
+  onAttach?: () => void;
 }
 
 function ChatInput({
   value,
   onValueChange,
-  onSendMessage, // useChat의 sendMessage
+  onSendMessage,
   disabled,
+  onAttach,
 }: ChatInputProps) {
-  // SendButton이 클릭될 때 실행될 함수
   const handleSend = () => {
     if (value.trim()) {
       onSendMessage(value);
@@ -21,7 +22,7 @@ function ChatInput({
   };
 
   return (
-    <ChatInputCore>
+    <ChatInputCore onAttach={onAttach}>
       <ChatInputCore.Layout>
         <ChatInputCore.Field
           value={value}
@@ -30,8 +31,8 @@ function ChatInput({
         />
         <ChatInputCore.AttachButton />
         <ChatInputCore.SendButton
-          onSendMessage={handleSend} // 수정된 핸들러 전달
-          disabled={disabled || !value.trim()} // 입력값이 없을 때도 비활성화
+          onSendMessage={handleSend}
+          disabled={disabled || !value.trim()}
         />
       </ChatInputCore.Layout>
     </ChatInputCore>

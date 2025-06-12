@@ -1,4 +1,4 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 
 interface CrawlerIngestRequest {
   url: string;
@@ -34,15 +34,14 @@ const postCrawlerIngest = async (
 };
 
 // TanStack Query 훅
-export const useCrawlerIngest = (options?: any) => {
-  const queryClient = useQueryClient();
+export const useCrawlerIngest = (options?: Record<string, unknown>) => {
   return useMutation<CrawlerIngestResponse, Error, CrawlerIngestRequest>({
     mutationFn: postCrawlerIngest,
     onSuccess: () => {
       // 성공 시 관련 쿼리 무효화 (예시)
       // queryClient.invalidateQueries({ queryKey: ['someRelatedQuery'] });
     },
-    ...options,
+    ...(options || {}),
   });
 };
 

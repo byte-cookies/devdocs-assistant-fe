@@ -129,12 +129,7 @@ export default function UserInfoBar() {
             textSizing={"md"}
             className="text-dark font-semibold"
           />
-          <Icon
-            src="/switcher.svg"
-            alt="Switcher Icon"
-            iconSizing="xl"
-            className="cursor-pointer hover:opacity-80"
-          />
+          <Image width={20} height={20} alt="switcher" src="/Switcher.svg" />
         </div>
       </div>
     </div>

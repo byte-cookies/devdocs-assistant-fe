@@ -1,4 +1,4 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 
 // API 요청 타입 (필요에 따라 수정)
 interface LangchainRagAskRequest {
@@ -38,15 +38,14 @@ const postLangchainRagAsk = async (
 };
 
 // TanStack Query 훅
-export const useLangchainRagAsk = (options?: any) => {
-  const queryClient = useQueryClient();
+export const useLangchainRagAsk = (options?: Record<string, unknown>) => {
   return useMutation<LangchainRagAskResponse, Error, LangchainRagAskRequest>({
     mutationFn: postLangchainRagAsk,
     onSuccess: () => {
       // 성공 시 관련 쿼리 무효화 (예시)
       // queryClient.invalidateQueries({ queryKey: ['relatedQueriesForRag'] });
     },
-    ...options,
+    ...(options || {}),
   });
 };
 

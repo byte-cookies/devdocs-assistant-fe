@@ -2,9 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import ChatAIOutputContent from "./ChatAIOutputContent";
 import ChatAIOutputCore, { ChatAIOutputCoreProps } from "./ChatAIOutputCore";
 
-interface StoryArgs extends Partial<ChatAIOutputCoreProps> {}
-
-const meta: Meta<StoryArgs> = {
+const meta: Meta<ChatAIOutputCoreProps> = {
   title: "Components/Organisms/Chat/ChatAIOutput/ChatAIOutputContent",
   component: ChatAIOutputContent,
   parameters: {
@@ -34,7 +32,7 @@ const meta: Meta<StoryArgs> = {
 };
 
 export default meta;
-type Story = StoryObj<StoryArgs>;
+type Story = StoryObj<ChatAIOutputCoreProps>;
 
 export const Default: Story = {
   args: {

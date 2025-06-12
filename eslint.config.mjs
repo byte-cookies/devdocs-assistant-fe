@@ -40,6 +40,7 @@ const eslintConfig = tseslint.config(
     rules: {
       "@typescript-eslint/lines-between-class-members": "off",
       "@typescript-eslint/no-throw-literal": "off",
+      "@typescript-eslint/no-unused-vars": "off",
 
       "import/extensions": "off",
       "import/no-extraneous-dependencies": "off",

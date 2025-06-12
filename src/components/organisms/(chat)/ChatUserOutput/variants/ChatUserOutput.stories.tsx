@@ -22,7 +22,7 @@ const meta: Meta<typeof ChatUserOutput> = {
   ],
   tags: ["autodocs"],
   argTypes: {
-    contentTest: {
+    content: {
       control: "text",
       description: "Test content for the ChatUserOutput component.",
       defaultValue: "Hello, this is a test message!",

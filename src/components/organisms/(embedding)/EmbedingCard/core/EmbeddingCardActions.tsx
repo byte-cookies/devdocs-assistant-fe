@@ -4,7 +4,7 @@ import { EmbeddingCardActionsStyles } from "./EmbeddingCardComponents.styles";
 import { useEmbeddingCardContext } from "./EmbeddingCardCore";
 
 const EmbeddingCardActions = () => {
-  const { url, crawledAt, status, id } = useEmbeddingCardContext();
+  const { url, crawledAt, status } = useEmbeddingCardContext();
 
   const handleUrlClick = () => {
     if (url) {

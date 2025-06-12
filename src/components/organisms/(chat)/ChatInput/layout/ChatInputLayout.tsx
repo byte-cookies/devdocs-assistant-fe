@@ -1,5 +1,5 @@
 import { cn } from "@/utils/tailwindHelper";
-import React, { ReactNode } from "react";
+import React from "react";
 import {
   AttachButtonLayoutStyles,
   centerLayoutStyles,
@@ -8,30 +8,37 @@ import {
   whiteCardContainerStyles,
 } from "./ChatInputLayout.styles";
 
-type LayoutProps = {
-  children: ReactNode;
-};
+export interface ChatInputLayoutProps {
+  children: React.ReactNode; // children 속성 유지
+}
 
-function ChatInputLayout({ children }: LayoutProps) {
+export default function ChatInputLayout({ children }: ChatInputLayoutProps) {
   const items = React.Children.toArray(children) as React.ReactElement[];
 
-  const field = items.find((c) => (c.type as any)?.name === "ChatInputField");
+  const input = items.find(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (c) => (c.type as any)?.name === "ChatInputField"
+  );
   const attachButton = items.find(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (c) => (c.type as any)?.name === "ChatInputAttachButton"
   );
   const sendButton = items.find(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (c) => (c.type as any)?.name === "ChatInputSendButton"
   );
 
   return (
-    <section className={cn(whiteCardContainerStyles())}>
-      <div className={cn(centerLayoutStyles())}>{field}</div>
-      <article className={cn(endLayoutStyles())}>
-        <div className={cn(AttachButtonLayoutStyles())}>{attachButton}</div>
-        <div className={cn(SendButtonLayoutStyles())}>{sendButton}</div>
-      </article>
-    </section>
+    <div className={cn(whiteCardContainerStyles())}>
+      {input && <div className={cn(centerLayoutStyles())}>{input}</div>}
+      <div className={cn(endLayoutStyles())}>
+        {attachButton && (
+          <div className={cn(AttachButtonLayoutStyles())}>{attachButton}</div>
+        )}
+        {sendButton && (
+          <div className={cn(SendButtonLayoutStyles())}>{sendButton}</div>
+        )}
+      </div>
+    </div>
   );
 }
-
-export default ChatInputLayout;
