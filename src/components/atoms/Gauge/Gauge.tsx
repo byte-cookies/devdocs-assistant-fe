@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/utils/tailwindHelper";
 import { type VariantProps } from "class-variance-authority";
 import React from "react";

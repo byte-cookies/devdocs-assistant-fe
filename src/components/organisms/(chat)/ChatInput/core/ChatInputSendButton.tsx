@@ -1,3 +1,5 @@
+"use client";
+
 import Button from "@/components/molecules/Button";
 
 interface ChatInputSendButtonProps {
@@ -25,5 +27,6 @@ function ChatInputSendButton({
     />
   );
 }
+ChatInputSendButton.displayName = "ChatInputSendButton";
 
 export default ChatInputSendButton;

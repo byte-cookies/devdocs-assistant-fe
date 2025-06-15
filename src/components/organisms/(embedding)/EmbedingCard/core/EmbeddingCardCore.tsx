@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext, useContext } from "react";
 import EmbeddingCardLayout from "../layout/EmbeddingCardLayout";
 import EmbeddingCardActions from "./EmbeddingCardActions";

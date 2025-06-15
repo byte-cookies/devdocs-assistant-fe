@@ -1,3 +1,5 @@
+"use client";
+
 import Gauge from "@/components/atoms/Gauge";
 import Icon from "@/components/atoms/Icon";
 import Text from "@/components/atoms/Text";
@@ -139,3 +141,4 @@ export default function ChatAIOutputToggle() {
     </>
   );
 }
+ChatAIOutputToggle.displayName = "ChatAIOutputToggle";

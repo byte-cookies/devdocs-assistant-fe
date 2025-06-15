@@ -1,3 +1,5 @@
+"use client";
+
 import Text from "@/components/atoms/Text";
 import Button from "@/components/molecules/Button";
 import { useState } from "react";
@@ -65,3 +67,4 @@ export default function EmbeddingBarInput() {
     </div>
   );
 }
+EmbeddingBarInput.displayName = "EmbeddingBarInput";

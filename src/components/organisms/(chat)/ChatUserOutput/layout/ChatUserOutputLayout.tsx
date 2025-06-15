@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/utils/tailwindHelper";
 import React from "react";
 import { ChatUserOutputContentStyles } from "./ChatUserOutputLayout.styles";

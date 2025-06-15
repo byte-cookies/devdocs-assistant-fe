@@ -1,3 +1,5 @@
+"use client";
+
 import Button from "@/components/molecules/Button";
 import { cn } from "@/utils/tailwindHelper";
 import { EmbeddingCardActionsStyles } from "./EmbeddingCardComponents.styles";
@@ -58,5 +60,6 @@ const EmbeddingCardActions = () => {
     </div>
   );
 };
+EmbeddingCardActions.displayName = "EmbeddingCardActions";
 
 export default EmbeddingCardActions;

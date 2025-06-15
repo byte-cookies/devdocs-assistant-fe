@@ -1,3 +1,5 @@
+"use client";
+
 import CodeBlock from "@/components/atoms/CodeBlock";
 import Text from "@/components/atoms/Text";
 import { cn } from "@/utils/tailwindHelper";
@@ -59,3 +61,4 @@ export default function ChatAIOutputContent() {
     </div>
   );
 }
+ChatAIOutputContent.displayName = "ChatAIOutputContent";

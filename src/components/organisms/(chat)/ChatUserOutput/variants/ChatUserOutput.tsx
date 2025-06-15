@@ -1,3 +1,5 @@
+"use client";
+
 import ChatUserOutputCore from "../core/ChatUserOutputCore";
 
 function ChatUserOutput({ content }: { content: string }) {

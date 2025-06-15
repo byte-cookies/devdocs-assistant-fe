@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 interface EmbeddingBarLayoutProps {
@@ -11,12 +13,12 @@ const EmbeddingBarLayout: React.FC<EmbeddingBarLayoutProps> = ({
 
   const cardList = items.find(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (c) => (c.type as any)?.name === "EmbeddingBarCardList"
+    (c) => (c.type as any)?.displayName === "EmbeddingBarCardList"
   );
 
   const input = items.find(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (c) => (c.type as any)?.name === "EmbeddingBarInput"
+    (c) => (c.type as any)?.displayName === "EmbeddingBarInput"
   );
 
   return (

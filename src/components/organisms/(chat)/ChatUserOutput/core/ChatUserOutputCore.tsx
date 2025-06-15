@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext, useContext } from "react";
 import ChatUserOutputLayout from "../layout/ChatUserOutputLayout";
 import ChatUserOutputContent from "./ChatUserOutputContent";

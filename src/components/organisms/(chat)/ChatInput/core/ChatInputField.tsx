@@ -1,3 +1,5 @@
+"use client";
+
 import Input from "@/components/atoms/Input";
 
 interface ChatInputFieldProps {
@@ -26,5 +28,6 @@ const ChatInputField = ({
     />
   );
 };
+ChatInputField.displayName = "ChatInputField";
 
 export default ChatInputField;

@@ -1,3 +1,5 @@
+"use client";
+
 // filepath: /Users/limjeonghoon/Desktop/프로젝트Lab/devdocs-assistant-fe/src/components/organisms/(embedding)/EmbedingCard/core/EmbeddingCardLoading.tsx
 import Spinner from "@/components/atoms/Spinner";
 import Text from "@/components/atoms/Text";
@@ -19,5 +21,6 @@ const EmbeddingCardLoading = () => {
     </div>
   );
 };
+EmbeddingCardLoading.displayName = "EmbeddingCardLoading";
 
 export default EmbeddingCardLoading;

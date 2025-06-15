@@ -1,3 +1,5 @@
+"use client";
+
 import Button from "@/components/molecules/Button";
 import { useChatInputContext } from "./ChatInputCore";
 
@@ -19,5 +21,6 @@ const ChatInputAttachButton = () => {
     />
   );
 };
+ChatInputAttachButton.displayName = "ChatInputAttachButton";
 
 export default ChatInputAttachButton;

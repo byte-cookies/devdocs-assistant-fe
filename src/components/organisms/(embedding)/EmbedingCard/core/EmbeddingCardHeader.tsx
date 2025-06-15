@@ -1,3 +1,5 @@
+"use client";
+
 import Icon from "@/components/atoms/Icon"; // Added
 import Text from "@/components/atoms/Text";
 import { cn } from "@/utils/tailwindHelper";
@@ -36,5 +38,6 @@ const EmbeddingCardHeader = () => {
     </div>
   );
 };
+EmbeddingCardHeader.displayName = "EmbeddingCardHeader";
 
 export default EmbeddingCardHeader;

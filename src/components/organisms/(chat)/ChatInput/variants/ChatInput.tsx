@@ -1,3 +1,5 @@
+"use client";
+
 import ChatInputCore from "../core/ChatInputCore";
 
 interface ChatInputProps {

@@ -1,3 +1,5 @@
+"use client";
+
 import { useCrawlerStore } from "@/store/crawlerStore";
 import { useCallback, useEffect, useState } from "react";
 import { useCrawlerDocument } from "../apis/useCrawlerDocument";

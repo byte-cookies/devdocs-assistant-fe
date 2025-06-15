@@ -41,3 +41,24 @@
   --font-weight-primaryRegular: 400;
   --font-weight-primaryBold: 700;
 }
+
+/* 스크롤바 숨김 스타일 */
+.scrollbar-hide {
+  /* Firefox */
+  scrollbar-width: none;
+  /* Safari and Chrome */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* 스크롤바 숨김 스타일 */
+.scrollbar-hide {
+  /* Firefox */
+  scrollbar-width: none;
+  /* Safari and Chrome */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

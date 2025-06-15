@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/utils/tailwindHelper";
 import React, { ReactNode } from "react";
 import { ChatAIOutputStyles } from "./ChatAIOutputLayout.styles";
@@ -19,11 +21,11 @@ const ChatAIOutputLayout: React.FC<ChatAIOutputLayoutProps> = ({
 
   const content = items.find(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (c) => (c.type as any)?.name === "ChatAIOutputContent"
+    (c) => (c.type as any)?.displayName === "ChatAIOutputContent"
   );
   const toggle = items.find(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (c) => (c.type as any)?.name === "ChatAIOutputToggle"
+    (c) => (c.type as any)?.displayName === "ChatAIOutputToggle"
   );
 
   return (

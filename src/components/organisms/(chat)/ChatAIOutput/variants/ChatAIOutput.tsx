@@ -1,3 +1,5 @@
+"use client";
+
 import { MessageSource } from "@/store/chatStore";
 import { ChatAIOutputCore } from "../core";
 

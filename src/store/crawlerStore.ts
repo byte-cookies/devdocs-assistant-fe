@@ -1,3 +1,5 @@
+"use client";
+
 import { create } from "zustand";
 
 // Document 타입 정의 (API 응답에 맞춰 구체화 필요)

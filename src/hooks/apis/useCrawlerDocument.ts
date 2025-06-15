@@ -1,3 +1,5 @@
+"use client";
+
 import { useQuery } from "@tanstack/react-query";
 
 // API 응답 타입 (필요에 따라 수정)

@@ -1,3 +1,5 @@
+"use client";
+
 import Text from "@/components/atoms/Text";
 import { useChatUserOutputContext } from "./ChatUserOutputCore";
 
@@ -13,5 +15,6 @@ const ChatUserOutputContent = () => {
     />
   );
 };
+ChatUserOutputContent.displayName = "ChatUserOutputContent";
 
 export default ChatUserOutputContent;

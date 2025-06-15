@@ -1,3 +1,5 @@
+"use client";
+
 import { MessageSource } from "@/store/chatStore";
 import { createContext, useContext } from "react";
 import ChatAIOutputLayout from "../layout";

@@ -1,3 +1,5 @@
+"use client";
+
 import { useMutation } from "@tanstack/react-query";
 
 // API 요청 타입 (필요에 따라 수정)

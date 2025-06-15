@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/utils/tailwindHelper";
 import Image from "next/image";
 import { EmbeddingCardContentStyles } from "./EmbeddingCardComponents.styles";
@@ -16,5 +18,6 @@ const EmbeddingCardContent = () => {
     </div>
   );
 };
+EmbeddingCardContent.displayName = "EmbeddingCardContent";
 
 export default EmbeddingCardContent;

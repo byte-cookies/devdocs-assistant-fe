@@ -1,3 +1,5 @@
+"use client";
+
 import EmbeddingCardCore, { type EmbeddingCardCoreProps } from "../core";
 
 export interface EmbeddingCardProps

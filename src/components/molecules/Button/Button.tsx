@@ -1,3 +1,5 @@
+"use client";
+
 import Icon from "@/components/atoms/Icon";
 import { iconStyles } from "@/components/atoms/Icon/Icon.styles";
 import Text from "@/components/atoms/Text";

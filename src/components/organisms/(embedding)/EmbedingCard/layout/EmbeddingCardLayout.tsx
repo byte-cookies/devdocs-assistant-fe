@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/utils/tailwindHelper";
 import React, { ReactNode } from "react";
 import { useEmbeddingCardContext } from "../core/EmbeddingCardCore";
@@ -28,22 +30,22 @@ const EmbeddingCardLayout: React.FC<EmbeddingCardLayoutProps> = ({
 
   const header = items.find(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (c) => (c.type as any)?.name === "EmbeddingCardHeader"
+    (c) => (c.type as any)?.displayName === "EmbeddingCardHeader"
   );
 
   const loading = items.find(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (c) => (c.type as any)?.name === "EmbeddingCardLoading"
+    (c) => (c.type as any)?.displayName === "EmbeddingCardLoading"
   );
 
   const content = items.find(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (c) => (c.type as any)?.name === "EmbeddingCardContent"
+    (c) => (c.type as any)?.displayName === "EmbeddingCardContent"
   );
 
   const actions = items.find(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (c) => (c.type as any)?.name === "EmbeddingCardActions"
+    (c) => (c.type as any)?.displayName === "EmbeddingCardActions"
   );
 
   return (

@@ -1,3 +1,5 @@
+"use client";
+
 import Spinner from "@/components/atoms/Spinner";
 import Text from "@/components/atoms/Text";
 import EmbeddingCard from "../../EmbedingCard";
@@ -55,7 +57,7 @@ export default function EmbeddingBarCardList() {
   }
 
   return (
-    <div className="flex flex-col gap-6 w-full h-full overflow-y-auto p-2 mt-2">
+    <div className="flex flex-col gap-6 w-full h-full overflow-y-auto scrollbar-hide p-2 mt-2">
       {displayedDocuments.map((doc) => (
         <EmbeddingCard
           key={doc.id}
@@ -76,3 +78,4 @@ export default function EmbeddingBarCardList() {
     </div>
   );
 }
+EmbeddingBarCardList.displayName = "EmbeddingBarCardList";

@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/utils/tailwindHelper";
 import { ReactNode } from "react";
 import {
@@ -24,7 +26,9 @@ export default function MainLayout({
       <aside className={cn(leftSidebarStyles())}>{leftSidebar}</aside>
 
       {/* 메인 콘텐츠 */}
-      <main className={cn(mainContentStyles())}>{mainContent}</main>
+      <main className={cn(mainContentStyles(), "scrollbar-hide")}>
+        {mainContent}
+      </main>
 
       {/* 오른쪽 사이드바 */}
       <aside className={cn(rightSidebarStyles())}>{rightSidebar}</aside>

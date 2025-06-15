@@ -31,7 +31,7 @@ const ChatDefalutLayout = () => {
   return (
     <div className="flex flex-col justify-center items-center w-[60rem] h-full p-8 gap-8">
       {/* 채팅 메시지 영역 */}
-      <div className="flex-1 overflow-y-auto mb-4 space-y-4 bg-white p-4 rounded-lg shadow-md w-full">
+      <div className="flex-1 overflow-y-auto mb-4 space-y-4 bg-white p-4 rounded-lg shadow-md w-full scrollbar-hide">
         {chatMessages.map(
           (
             message: Message // chatMessages 사용 및 타입 명시

@@ -1,3 +1,5 @@
+"use client";
+
 import { create } from "zustand";
 
 // LangchainRagAsk 응답의 source 타입 정의

@@ -1,3 +1,5 @@
+"use client";
+
 import { useChatStore } from "@/store/chatStore";
 import { useLangchainRagAsk } from "../apis/useLangchainRagAsk";
 

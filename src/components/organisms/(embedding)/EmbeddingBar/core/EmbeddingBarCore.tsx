@@ -1,3 +1,5 @@
+"use client";
+
 import { useDocsAdd } from "@/hooks/services/useDocsAdd";
 import { useDocsSearch } from "@/hooks/services/useDocsSearch";
 
