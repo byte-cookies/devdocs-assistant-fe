@@ -31,14 +31,24 @@ export default function EmbeddingBarCardList() {
 
   if (searchError || latestDocsError) {
     return (
-      <div className="flex flex-col items-center justify-center h-full p-2 mt-2">
-        <Text
-          content={`Error loading documents: ${
-            searchError?.message || latestDocsError?.message
-          }`}
-          textSizing="md"
-          textVisual="error"
-        />
+      <div className="flex flex-col items-center justify-center h-full p-6 mt-2">
+        <div className="flex flex-col justify-center items-center gap-6 w-full h-full max-w-sm">
+          {/* Error Content */}
+          <div className="text-center space-y-3">
+            <div className="bg-red-50/80 border border-red-100 rounded-lg p-3 backdrop-blur-sm">
+              <Text
+                content={
+                  searchError?.message ||
+                  latestDocsError?.message ||
+                  "An unexpected error occurred while fetching documents"
+                }
+                textSizing="sm"
+                textVisual="error"
+                className="text-red-700 leading-relaxed font-medium"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

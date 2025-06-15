@@ -1,6 +1,5 @@
 "use client";
 
-import Text from "@/components/atoms/Text";
 import Button from "@/components/molecules/Button";
 import { useState } from "react";
 import { useEmbeddingBarContext } from "./EmbeddingBarCore";
@@ -44,13 +43,6 @@ export default function EmbeddingBarInput() {
               disabled={isAddingDocs || !urlInput.trim()}
             />
           </div>
-          {addError && (
-            <Text
-              textSizing="sm"
-              textVisual="error"
-              content={`Error: ${addError}`}
-            />
-          )}
         </div>
       ) : (
         <Button
