@@ -16,13 +16,13 @@ export default function EmbeddingBarCardList() {
   if (isLoadingDisplayedDocs) {
     return (
       <div className="flex flex-col items-center justify-center h-full p-2 mt-2">
-        <div className="flex justify-center items-center gap-4">
+        <div className="flex justify-center items-center gap-4 w-full h-full">
           <Spinner spinnerSizing="lg" spinnerVisual="secondary" />
           <Text
             content="Loading documents..."
             textSizing="xl"
             textLayout={"justify-center"}
-            className="font-bold"
+            className="font-bold w-auto"
           />
         </div>
       </div>

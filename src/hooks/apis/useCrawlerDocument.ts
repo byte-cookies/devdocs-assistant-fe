@@ -16,7 +16,7 @@ const fetchCrawlerDocument = async (
   params: number
 ): Promise<CrawlerDocumentResponse> => {
   const response = await fetch(
-    `https://${process.env.NEXT_PUBLIC_API_URL}/crawler/documents?limit=${params}`
+    `https://${process.env.NEXT_PUBLIC_API_URL}/api/crawler/documents?limit=${params}`
   );
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
