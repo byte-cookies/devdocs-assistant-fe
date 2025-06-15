@@ -1,9 +1,19 @@
-export default function Home() {
+"use client";
+
+import EmbeddingBar from "@/components/organisms/(embedding)/EmbeddingBar";
+import UserInfoBar from "@/components/organisms/(user)/UserInfoBar";
+import Providers from "@/components/Providers";
+import { ChatLayout } from "@/components/templates/ChatLayout";
+import MainLayout from "@/components/templates/MainLayout";
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main>
-        <h1 className="text-4xl font-bold text-center">Main Page</h1>
-      </main>
-    </div>
+    <Providers>
+      <MainLayout
+        leftSidebar={<UserInfoBar />}
+        rightSidebar={<EmbeddingBar />}
+        mainContent={<ChatLayout />}
+      />
+    </Providers>
   );
 }

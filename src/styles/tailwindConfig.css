@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-sm: 83.75rem;
+  --breakpoint-md: 100.625rem;
+  --breakpoint-lg: 115.5rem;
+
+  --spacing-P0: 0px;
+  --spacing-P4: 0.25rem;
+  --spacing-P8: 0.5rem;
+  --spacing-P12: 0.75rem;
+  --spacing-P16: 1rem;
+  --spacing-P20: 1.25rem;
+  --spacing-P24: 1.5rem;
+  --spacing-P32: 2rem;
+  --spacing-P40: 2.5rem;
+  --spacing-P48: 3rem;
+  --spacing-P56: 3.5rem;
+  --spacing-P64: 4rem;
+
+  --color-primary: #2f8682;
+  --color-background: #d5e9e8;
+  --color-buttonPrimary: #5599ff;
+  --color-iconPrimary: #262e3d;
+  --color-textPrimary: #0a1b39;
+  --color-textSecondary: #475569;
+  --color-textTertiaryLight: #ffffff;
+  --color-baseLine: #1b202b;
+
+  --shadow-md: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+  --radius-md: 0.375rem;
+
+  --font-primary: "Onest", sans-serif;
+
+  --text-P10: 0.625rem;
+  --text-P16: 1rem;
+  --text-P24: 1.5rem;
+  --text-P30: 1.875rem;
+
+  --font-weight-primaryRegular: 400;
+  --font-weight-primaryBold: 700;
+}
+
+/* 스크롤바 숨김 스타일 */
+.scrollbar-hide {
+  /* Firefox */
+  scrollbar-width: none;
+  /* Safari and Chrome */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* 스크롤바 숨김 스타일 */
+.scrollbar-hide {
+  /* Firefox */
+  scrollbar-width: none;
+  /* Safari and Chrome */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

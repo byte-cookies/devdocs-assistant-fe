@@ -1,8 +1,8 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
 import eslint from "@eslint/js";
+import { dirname } from "path";
 import tseslint from "typescript-eslint";
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -40,6 +40,7 @@ const eslintConfig = tseslint.config(
     rules: {
       "@typescript-eslint/lines-between-class-members": "off",
       "@typescript-eslint/no-throw-literal": "off",
+      "@typescript-eslint/no-unused-vars": "off",
 
       "import/extensions": "off",
       "import/no-extraneous-dependencies": "off",
