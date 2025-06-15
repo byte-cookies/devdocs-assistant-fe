@@ -22,7 +22,7 @@ const postLangchainRagAsk = async (
   payload: LangchainRagAskRequest
 ): Promise<LangchainRagAskResponse> => {
   const response = await fetch(
-    `https://${process.env.NEXT_PUBLIC_API_URL}/Langchain/rag/ask`,
+    `https://${process.env.NEXT_PUBLIC_API_URL}/api/Langchain/rag/ask`,
     {
       method: "POST",
       headers: {

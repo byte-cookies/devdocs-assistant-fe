@@ -18,7 +18,7 @@ const postCrawlerIngest = async (
   payload: CrawlerIngestRequest
 ): Promise<CrawlerIngestResponse> => {
   const response = await fetch(
-    `https://${process.env.NEXT_PUBLIC_API_URL}/crawler/ingest`,
+    `https://${process.env.NEXT_PUBLIC_API_URL}/api/crawler/ingest`,
     {
       method: "POST",
       headers: {

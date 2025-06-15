@@ -24,7 +24,7 @@ const fetchCrawlerCheck = async (
 ): Promise<CrawlerCheckResponse> => {
   const queryParams = params ? new URLSearchParams(params).toString() : "";
   const response = await fetch(
-    `https://${process.env.NEXT_PUBLIC_API_URL}/crawler/check?${queryParams}`
+    `https://${process.env.NEXT_PUBLIC_API_URL}/api/crawler/check?${queryParams}`
   );
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);

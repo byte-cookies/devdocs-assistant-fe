@@ -109,7 +109,7 @@ export default function EmbeddingBarCore({ children }: EmbeddingBarCoreProps) {
 
   return (
     <EmbeddingBarContext.Provider value={contextValue}>
-      <EmbeddingBarLayout>{children}</EmbeddingBarLayout>
+      {children}
     </EmbeddingBarContext.Provider>
   );
 }

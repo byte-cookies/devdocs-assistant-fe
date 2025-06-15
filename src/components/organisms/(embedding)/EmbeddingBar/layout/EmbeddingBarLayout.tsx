@@ -6,9 +6,7 @@ interface EmbeddingBarLayoutProps {
   children: React.ReactNode;
 }
 
-const EmbeddingBarLayout: React.FC<EmbeddingBarLayoutProps> = ({
-  children,
-}: EmbeddingBarLayoutProps) => {
+function EmbeddingBarLayout({ children }: EmbeddingBarLayoutProps) {
   const items = React.Children.toArray(children) as React.ReactElement[];
 
   const cardList = items.find(
@@ -27,6 +25,6 @@ const EmbeddingBarLayout: React.FC<EmbeddingBarLayoutProps> = ({
       {cardList}
     </section>
   );
-};
+}
 
 export default EmbeddingBarLayout;
